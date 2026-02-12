@@ -757,18 +757,23 @@ APPEALS_USER = env("APPEALS_USER")
 APPEALS_PASS = env("APPEALS_PASS")
 
 # Handmade Git Command
-LAST_GIT_TAG = max(os.listdir(os.path.join(BASE_DIR, ".git", "refs", "tags")), default=0)
+_git_tags_dir = os.path.join(BASE_DIR, ".git", "refs", "tags")
+LAST_GIT_TAG = max(os.listdir(_git_tags_dir), default=0) if os.path.isdir(_git_tags_dir) else 0
 
 # Sentry Config
 SENTRY_DSN = env("SENTRY_DSN")
 SENTRY_SAMPLE_RATE = env("SENTRY_SAMPLE_RATE")
+try:
+    _sentry_release = sentry.fetch_git_sha(BASE_DIR)
+except sentry.InvalidGitRepository:
+    _sentry_release = str(LAST_GIT_TAG)
 
 SENTRY_CONFIG = {
     "dsn": SENTRY_DSN,
     "send_default_pii": True,
     "traces_sample_rate": SENTRY_SAMPLE_RATE,
     "enable_tracing": True,
-    "release": sentry.fetch_git_sha(BASE_DIR),
+    "release": _sentry_release,
     "environment": GO_ENVIRONMENT,
     "debug": DEBUG,
     "tags": {
