@@ -1,0 +1,23 @@
+.key-figure {
+    .value {
+        font-weight: var(--go-ui-font-weight-medium);
+    }
+
+    &.small-size {
+        .value {
+            font-size: var(--go-ui-font-size-2xl);
+        }
+    }
+
+    &.medium-size {
+        .value {
+            font-size: var(--go-ui-font-size-3xl);
+        }
+    }
+
+    &.large-size {
+        .value {
+            font-size: var(--go-ui-font-size-4xl);
+        }
+    }
+}

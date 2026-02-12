@@ -1,0 +1,31 @@
+.rapid-response-deployments {
+    .table {
+        min-height: 5rem;
+
+        .name {
+            width: 0%;
+            min-width: 12rem;
+        }
+
+        .role {
+            width: 20rem;
+        }
+
+        .organisation {
+            width: 11rem;
+        }
+
+        .country {
+            width: 10rem;
+        }
+
+        .actions {
+            width: 3rem;
+        }
+
+        .sub-cell {
+            background-color: var(--go-ui-color-gray-20);
+        }
+    }
+}
+

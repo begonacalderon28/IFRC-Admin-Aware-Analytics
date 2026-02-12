@@ -1,0 +1,10 @@
+.sort-by-dropdown-content {
+    .checkmark {
+        opacity: 0;
+        font-size: var(--go-ui-height-icon-multiplier);
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}

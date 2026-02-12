@@ -1,0 +1,32 @@
+.time-series-chart {
+    width: 100%;
+    --path-stroke-width: 1pt;
+    --color-source-dref: var(--go-ui-color-primary-blue);
+    --color-source-emergency-appeal: var(--go-ui-color-blue-60);
+    --color-source-others: var(--go-ui-color-blue-20);
+
+    .dref {
+        color: var(--color-source-dref);
+        stroke: var(--color-source-dref);
+        stroke-width: var(--path-stroke-width);
+        fill: none;
+    }
+
+    .emergency-appeal {
+        color: var(--color-source-emergency-appeal);
+        stroke: var(--color-source-emergency-appeal);
+        stroke-width: var(--path-stroke-width);
+        fill: none;
+    }
+
+    .others {
+        color: var(--color-source-others);
+        stroke: var(--color-source-others);
+        stroke-width: var(--path-stroke-width);
+        fill: none;
+    }
+
+    .x-axis-tick {
+        transform: rotate(-30deg);
+    }
+}

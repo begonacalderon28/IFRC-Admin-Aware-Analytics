@@ -1,0 +1,14 @@
+{
+    "namespace": "regionOperations",
+    "strings": {
+        "regionEmergenciesTableTitle": "Recent Emergencies ({numEmergencies})",
+        "regionEmergenciesTableDate":"Start Date",
+        "regionEmergenciesTableName":"Name",
+        "regionEmergenciesTableDisasterType":"Disaster Type",
+        "regionEmergenciesTableGlide":"Glide",
+        "regionEmergenciesTableRequestedAmt":"Requested Amount",
+        "regionEmergenciesTableCountry":"Countries",
+        "regionEmergenciesTableViewAll":"View all Emergencies in this Region",
+        "regionEmergenciesTableNumberAffected":"# Affected"
+    }
+}

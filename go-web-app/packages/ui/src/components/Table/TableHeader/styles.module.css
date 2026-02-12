@@ -1,0 +1,26 @@
+.th {
+    overflow: hidden;
+    vertical-align: bottom;
+    text-align: left;
+
+    .resize-handle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        border-right: var(--go-ui-width-separator-sm) solid transparent;
+        cursor: col-resize;
+        width: var(--go-ui-width-separator-lg);
+        height: calc(100% - var(--go-ui-spacing-sm));
+    }
+
+    &:hover {
+        .resize-handle {
+            border-right-color: var(--go-ui-color-gray-30);
+
+            &:hover {
+                border-right-color: var(--go-ui-color-gray-50);
+            }
+        }
+    }
+}

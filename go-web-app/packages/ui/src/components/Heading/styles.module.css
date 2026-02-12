@@ -1,0 +1,60 @@
+.heading {
+    --font-size: var(--go-ui-font-size-xl);
+    --line-height: var(--go-ui-line-height-xs);
+    margin: 0;
+    line-height: var(--line-height);
+    font-size: var(--font-size);
+    font-weight: var(--go-ui-font-weight-semibold);
+
+    /* FIXME: remove media print color */
+
+    &.center-aligned {
+        text-align: center;
+    }
+
+    &.level-one {
+        --font-size: 2.5rem;
+
+        @media print {
+            color: var(--go-ui-color-primary-blue);
+        }
+    }
+
+    &.level-two {
+        --font-size: 1.875rem;
+
+        @media print {
+            color: var(--go-ui-color-primary-blue);
+        }
+    }
+
+    &.level-three {
+        --font-size: 1.125rem;
+        text-transform: uppercase;
+
+        @media print {
+            color: var(--go-ui-color-primary-red);
+        }
+    }
+
+    &.level-four {
+        --font-size: 1.125rem;
+    }
+
+    &.level-five {
+        --font-size: 1rem;
+    }
+
+    &.level-six {
+        --font-size: var(--go-ui-font-size-md);
+        --line-height: var(--go-ui-line-height-md);
+        font-weight: var(--go-ui-font-weight-semibold);
+    }
+
+    &.ellipsized {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}

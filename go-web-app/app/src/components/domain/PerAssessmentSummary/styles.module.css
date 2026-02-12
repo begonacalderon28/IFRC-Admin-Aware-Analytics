@@ -1,0 +1,16 @@
+.rating {
+    align-items: center;
+
+    .bar-container {
+        display: flex;
+        align-items: flex-end;
+        background-color: var(--go-ui-color-separator);
+        width: 1rem;
+        height: 4rem;
+
+        .filled-bar {
+            background-color: var(--go-ui-color-dark-blue-40);
+            width: 100%;
+        }
+    }
+}

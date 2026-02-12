@@ -1,0 +1,25 @@
+.staff,
+.volunteer {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2rem 3fr 3rem 3fr 2rem;
+    gap: var(--go-ui-spacing-md);
+
+    .male-label {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .male-disaggregation {
+        transform: scaleX(-1);
+        color: var(--go-ui-color-primary-blue);
+    }
+
+    .label {
+        text-align: center;
+    }
+
+    .female-disaggregation {
+        color: var(--go-ui-color-primary-red);
+    }
+}

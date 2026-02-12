@@ -1,0 +1,10 @@
+{
+    "namespace": "countryNsOverviewContextAndStructure",
+    "strings": {
+        "localUnitsMapAddress": "Address",
+        "localUnitsMapLastUpdate": "Last updated",
+        "localUnitsMapTooltipMoreDetails": "More details",
+        "localUnitsMapLocalUnitType": "Local unit type",
+        "localUnitsMapHealthFacilityType": "Health facility type"
+    }
+}

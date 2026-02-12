@@ -1,0 +1,15 @@
+.population-map {
+    .legend-content {
+        .population-gradient {
+            width: min(10rem, 30cqi);
+            height: 0.5rem;
+        }
+
+        .label-list {
+            display: flex;
+            justify-content: space-between;
+            font-size: var(--go-ui-font-size-xs);
+            font-weight: var(--go-ui-font-weight-medium);
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "namespace": "accountMyFormsThreeW",
+    "strings": {
+        "threeWActivities": "Emergency Response 3W Activities",
+        "threeWNationalSociety": "National Society / ERU",
+        "threeWEmergencyTitle": "Title",
+        "threeWEmergencyStartDate": "Start Date",
+        "threeWEmergencyCountryName": "Country",
+        "threeWEmergencyRegion": "Province/Region",
+        "threeWEmergencyStatus": "Status",
+        "threeWEmergencyServices": "Services provided to people in need",
+        "threeWViewAllActivityLabel": "View all Activities"
+    }
+}

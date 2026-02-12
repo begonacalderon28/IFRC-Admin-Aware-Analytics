@@ -1,0 +1,20 @@
+{
+    "namespace": "appealsTable",
+    "strings": {
+        "appealsTableStartDate": "Start Date",
+        "appealsTableStartDateAfter": "Start After",
+        "appealsTableStartDateBefore": "Start Before",
+        "appealsTableType": "Type",
+        "appealsTableCode": "Code",
+        "appealsTableOperation": "Active Operation",
+        "appealsTableDisasterType": "Disaster Type",
+        "appealsTableRequestedAmount": "Requested",
+        "appealsTableFundedAmount": "Funding",
+        "appealsTableCountry": "Country",
+        "appealsTableFilterTypePlaceholder": "All Appeal Types",
+        "appealsTableFilterDisastersPlaceholder": "All Disaster Types",
+        "appealsTableClearFilters": "Clear Filters",
+        "appealsTableFilterDistrictPlaceholder": "All Provinces",
+        "appealsTableProvinces": "Provinces"
+    }
+}

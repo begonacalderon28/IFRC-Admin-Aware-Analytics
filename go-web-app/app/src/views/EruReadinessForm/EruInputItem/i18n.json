@@ -1,0 +1,9 @@
+{
+    "namespace": "eruReadinessForm",
+    "strings": {
+        "eruEquipmentReadiness": "Equipment Readiness",
+        "eruPeopleReadiness": "People Readiness",
+        "eruFundingReadiness": "Funding Readiness",
+        "eruComments": "Comments"
+    }
+}

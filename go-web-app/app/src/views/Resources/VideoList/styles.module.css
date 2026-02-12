@@ -1,0 +1,9 @@
+.scroll-view {
+    overflow-x: auto;
+    scroll-snap-type: inline mandatory;
+
+    .video-item {
+        scroll-snap-align: start;
+        min-width: min(20rem, 100%);
+    }
+}

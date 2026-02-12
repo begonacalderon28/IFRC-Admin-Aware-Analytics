@@ -1,0 +1,58 @@
+version: '3.2'
+
+services:
+  db:
+    image: postgres:15.0-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:latest
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  server:
+    image: $DOCKER_IMAGE_SERVER
+    environment:
+      CI: "true"
+      # https://github.com/pytest-dev/pytest/issues/7443
+      PYTEST_ADDOPTS: "--color=yes"
+      RISK_ENVIRONMENT: ${RISK_ENVIRONMENT:-CI}
+      RISK_API_FQDN: https://go-test.com
+      DJANGO_DEBUG: "true"
+      DJANGO_SECRET_KEY: "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+      # From db.environment
+      DATABASE_NAME: postgres
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_PORT: 5432
+      DATABASE_HOST: db
+      # From redis
+      CELERY_REDIS_URL: redis://redis:6379/0
+      CACHE_REDIS_URL: redis://redis:6379/1
+      # Dummy credentials
+      # -- PDC
+      PDC_USERNAME: username
+      PDC_PASSWORD: password
+      PDC_ACCESS_TOKEN: token
+      # -- Meteoswiss
+      METEOSWISS_S3_ENDPOINT_URL: https://test-endpoint.s3.com
+      METEOSWISS_S3_BUCKET: test-bucket
+      METEOSWISS_S3_ACCESS_KEY: access-key
+      METEOSWISS_S3_SECRET_KEY: secret-key
+    volumes:
+      - ./coverage/:/code/coverage/
+      - ./ci-share/:/ci-share/
+    depends_on:
+      - db
+      - redis

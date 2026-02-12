@@ -1,0 +1,11 @@
+.strength-component {
+    .icon {
+        color: var(--go-ui-color-green);
+    }
+}
+
+.priority-component {
+    .icon {
+        color: var(--go-ui-color-red);
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "namespace": "countryNsOverviewActivities",
+    "strings": {
+        "initiativeFund": "Fund({fundType})",
+        "initiativeYearApprovedAndDuration": "{yearApproved}({duration} months)",
+        "initiativeYearApprovedTitle": "Year Approved/Duration",
+        "initiativeCategoriesTitle": "Categories",
+        "initiativeAllocationTitle": "Allocation (CHF)"
+    }
+}

@@ -1,0 +1,17 @@
+.local-units-map {
+    .contact-details {
+        max-width: 18rem;
+    }
+
+    .legend-icon {
+        filter: invert(1);
+    }
+
+    .icon {
+        font-size: var(--go-ui-height-icon-multiplier);
+    }
+}
+
+.map-popup {
+    height: 16rem;
+}

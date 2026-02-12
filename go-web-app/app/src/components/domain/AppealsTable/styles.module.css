@@ -1,0 +1,13 @@
+.appeals-table {
+    .table {
+        .appeal-type {
+            width: 0%;
+            min-width: 6rem;
+        }
+
+        .code {
+            width: 0%;
+            min-width: 6rem;
+        }
+    }
+}

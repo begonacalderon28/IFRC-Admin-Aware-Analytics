@@ -1,0 +1,11 @@
+.time-series-chart {
+    width: 100%;
+    height: 10rem;
+
+    .events-chart {
+        color: var(--go-ui-color-primary-red);
+        stroke: var(--go-ui-color-primary-red);
+        stroke-width: 1pt;
+        fill: none;
+    }
+}

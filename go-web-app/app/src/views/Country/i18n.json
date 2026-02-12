@@ -1,0 +1,18 @@
+{
+    "namespace": "country",
+    "strings": {
+        "countryPageTitle": "IFRC GO - {countryName}",
+        "countryPageTitleFallbackCountry": "Country",
+
+        "ongoingActivitiesTabTitle": "Ongoing Activities",
+        "nsOverviewTabTitle": "National Society Overview",
+        "countryProfileTabTitle": "Country Profile",
+        "countryAdditionalInfoTab":"Additional Info",
+
+
+
+        "countryLoadingErrorMessage": "Error loading data for the country!",
+        "home": "Home",
+        "editCountryLink": "Edit Country"
+    }
+}

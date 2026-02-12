@@ -1,0 +1,10 @@
+.table-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--go-ui-spacing-sm);
+    min-width: max-content;
+
+    .more-icon {
+        font-size: var(--go-ui-height-icon-multiplier);
+    }
+}

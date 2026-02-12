@@ -1,0 +1,18 @@
+{
+    "namespace": "accountDetails",
+    "strings": {
+        "editUserProfileHeading": "Edit User Profile",
+        "firstNameInputLabel": "First Name",
+        "lastNameInputLabel": "Last Name",
+        "cityInputLabel": "City",
+        "organizationTypeInputLabel": "Organization Type",
+        "organizationNameInputLabel": "Organization Name",
+        "departmentInputLabel": "Department",
+        "phoneNumberInputLabel": "Phone Number",
+        "positionInputLabel":"Position",
+        "editProfileConfirmButtonLabel": "Confirm",
+        "editProfileCancelButtonLabel": "Cancel",
+        "editAccountSuccessfulMessage": "Account edited successfully!",
+        "editAccountFailureMessage": "Sorry, failed to edit account!"
+    }
+}

@@ -1,0 +1,37 @@
+.stacked-bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--go-ui-spacing-xs);
+
+    .bar-info-container {
+        display: flex;
+
+        .bar-info {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: var(--go-ui-spacing-2xs);
+
+            .value {
+                font-weight: var(--go-ui-font-weight-semibold);
+            }
+
+            .percentage {
+                font-size: var(--go-ui-font-size-sm);
+            }
+        }
+    }
+
+    .track {
+        --height: 1rem;
+        display: flex;
+        border-radius: calc(0.5 * var(--height));
+        background-color: var(--go-ui-color-gray-50);
+        height: var(--height);
+        overflow: hidden;
+
+        .bar {
+            height: 100%;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.risk-imminent-event-map {
+    display: flex;
+    gap: var(--go-ui-spacing-md);
+
+    .side-panel {
+        flex-basis: calc(14vw + 16rem);
+        height: var(--go-ui-height-map-md);
+    }
+
+    .map-container {
+        flex-grow: 1;
+    }
+
+    @media screen and (max-width: 50rem) {
+        flex-direction: column;
+        height: initial;
+
+        .side-panel {
+            flex-basis: unset;
+            margin: unset;
+            border-radius: unset;
+            box-shadow: unset;
+            max-height: 70vh;
+            overflow: auto;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.ongoing-eru-deployments {
+    .table {
+        min-height: 5rem;
+
+        .name {
+            width: 0%;
+            min-width: 12rem;
+        }
+
+        .organisation {
+            width: 11rem;
+        }
+
+        .country {
+            width: 10rem;
+        }
+
+        .actions {
+            width: 3rem;
+        }
+
+        .sub-cell {
+            border-bottom: unset;
+            background-color: var(--go-ui-color-gray-20);
+        }
+    }
+}

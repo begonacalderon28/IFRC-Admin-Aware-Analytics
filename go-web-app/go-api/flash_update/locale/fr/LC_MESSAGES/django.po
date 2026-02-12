@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-17 10:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: flash_update/apps.py:7 flash_update/models.py:191
+msgid "flash update"
+msgstr ""
+
+#: flash_update/forms.py:10 flash_update/models.py:157
+msgid "organizations"
+msgstr ""
+
+#: flash_update/forms.py:11 flash_update/models.py:161
+msgid "flash update types"
+msgstr ""
+
+#: flash_update/models.py:24
+msgid "file"
+msgstr ""
+
+#: flash_update/models.py:28
+msgid "created_by"
+msgstr ""
+
+#: flash_update/models.py:35
+msgid "flash graphic map"
+msgstr ""
+
+#: flash_update/models.py:36
+msgid "flash graphic maps"
+msgstr ""
+
+#: flash_update/models.py:41
+msgid "date"
+msgstr ""
+
+#: flash_update/models.py:42
+msgid "Name or Source Description"
+msgstr ""
+
+#: flash_update/models.py:49
+msgid "document"
+msgstr ""
+
+#: flash_update/models.py:55
+msgid "flash reference"
+msgstr ""
+
+#: flash_update/models.py:56
+msgid "flash references"
+msgstr ""
+
+#: flash_update/models.py:69
+msgid "IFRC Secretariat"
+msgstr ""
+
+#: flash_update/models.py:73
+msgid "created by"
+msgstr ""
+
+#: flash_update/models.py:81
+msgid "modified by"
+msgstr ""
+
+#: flash_update/models.py:87 flash_update/models.py:249
+msgid "created at"
+msgstr ""
+
+#: flash_update/models.py:88
+msgid "updated at"
+msgstr ""
+
+#: flash_update/models.py:92
+msgid "hazard type"
+msgstr ""
+
+#: flash_update/models.py:95
+msgid "Situational Overview"
+msgstr ""
+
+#: flash_update/models.py:98
+msgid "map"
+msgstr ""
+
+#: flash_update/models.py:99
+msgid "graphics"
+msgstr ""
+
+#: flash_update/models.py:102
+msgid "originator_name"
+msgstr ""
+
+#: flash_update/models.py:103
+msgid "originator_title"
+msgstr ""
+
+#: flash_update/models.py:104
+msgid "originator_email"
+msgstr ""
+
+#: flash_update/models.py:105
+msgid "originator_phone"
+msgstr ""
+
+#: flash_update/models.py:107
+msgid "ifrc_name"
+msgstr ""
+
+#: flash_update/models.py:108
+msgid "ifrc_title"
+msgstr ""
+
+#: flash_update/models.py:109
+msgid "ifrc_email"
+msgstr ""
+
+#: flash_update/models.py:110
+msgid "ifrc_phone"
+msgstr ""
+
+#: flash_update/models.py:119 flash_update/models.py:209
+msgid "share with"
+msgstr ""
+
+#: flash_update/models.py:121
+msgid "references"
+msgstr ""
+
+#: flash_update/models.py:122
+msgid "extracted file"
+msgstr ""
+
+#: flash_update/models.py:123
+msgid "extracted at"
+msgstr ""
+
+#: flash_update/models.py:126 flash_update/models.py:136
+msgid "Flash update"
+msgstr ""
+
+#: flash_update/models.py:127
+msgid "Flash updates"
+msgstr ""
+
+#: flash_update/models.py:138
+msgid "country"
+msgstr ""
+
+#: flash_update/models.py:139
+msgid "district"
+msgstr ""
+
+#: flash_update/models.py:144
+msgid "flash country district"
+msgstr ""
+
+#: flash_update/models.py:145
+msgid "flash countries districts"
+msgstr ""
+
+#: flash_update/models.py:155 flash_update/models.py:222
+msgid "name"
+msgstr ""
+
+#: flash_update/models.py:165
+msgid "category"
+msgstr ""
+
+#: flash_update/models.py:167
+msgid "is disabled?"
+msgstr ""
+
+#: flash_update/models.py:167
+msgid "Disable in form"
+msgstr ""
+
+#: flash_update/models.py:168
+msgid "tooltip text"
+msgstr ""
+
+#: flash_update/models.py:172
+msgid "flash action"
+msgstr ""
+
+#: flash_update/models.py:173
+msgid "flash actions"
+msgstr ""
+
+#: flash_update/models.py:185
+msgid "organization"
+msgstr ""
+
+#: flash_update/models.py:188
+msgid "actions"
+msgstr ""
+
+#: flash_update/models.py:189
+msgid "summary"
+msgstr ""
+
+#: flash_update/models.py:196
+msgid "actions taken flash"
+msgstr ""
+
+#: flash_update/models.py:197
+msgid "all actions taken flash"
+msgstr ""
+
+#: flash_update/models.py:214
+msgid "flash email subscription"
+msgstr ""
+
+#: flash_update/models.py:235
+msgid "donor group"
+msgstr ""
+
+#: flash_update/models.py:238
+msgid "donor"
+msgstr ""
+
+#: flash_update/serializers.py:102
+msgid "Different districts found for given country"
+msgstr ""

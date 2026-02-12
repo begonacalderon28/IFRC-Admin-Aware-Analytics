@@ -1,0 +1,58 @@
+import typing
+from collections import defaultdict
+
+from django.core.management.base import BaseCommand
+from django.db import models
+from sentry_sdk.crons import monitor
+
+from common.models import HazardType
+from imminent.models import Pdc
+from imminent.sources.pdc import ArcGisPdcSource
+from risk_module.sentry import SentryMonitor
+
+
+class Command(ArcGisPdcSource.CommandMixin, BaseCommand):
+    help = "Get PDC 3 days Cone of Uncertainty data"
+
+    def get_pdc_queryset(self) -> models.QuerySet[Pdc]:
+        return super().get_pdc_queryset().filter(hazard_type=HazardType.CYCLONE)
+
+    def save_pdc_using_uuid(self, session, uuid_list: typing.List[str]) -> bool:
+        """
+        Query and save pdc polygon data from Arc GIS for given uuids
+        """
+        # Fetch data for multiple uuids
+        url = "https://partners.pdc.org/arcgis/rest/services/partners/pdc_active_hazards_partners/MapServer/12/query"
+        response = session.post(
+            url=url,
+            data={
+                **ArcGisPdcSource.ARC_GIS_DEFAULT_PARAMS,
+                # NOTE: Each new request has 6s+ response time, using where in query we reduce that latency
+                "where": self.generate_uuid_where_statement("uuid", uuid_list),
+                "outFields": "uuid,hazard_name,storm_name,advisory_number,objectid,ESRI_OID,category_id",
+            },
+        )
+
+        # Save data for multiple uuids
+        response_data = response.json()
+
+        is_valid = self.is_valid_arc_response(response_data)
+        if not is_valid:
+            return False
+
+        # NOTE: Here multiple features are return per uuid as which are used as FeatureCollection in go-web-app
+        feature_by_uuid = defaultdict(list)
+        for feature in response_data["features"]:
+            _uuid = feature["properties"]["uuid"]
+            feature_by_uuid[_uuid].append(feature)
+
+        for _uuid, features in feature_by_uuid.items():
+            # XXX: Multiple row has same uuid
+            Pdc.objects.filter(uuid=_uuid).update(
+                cyclone_three_days_cou=features,
+            )
+        return True
+
+    @monitor(monitor_slug=SentryMonitor.CREATE_PDC_THREE_DAYS_COU)
+    def handle(self, **_):
+        self.process()

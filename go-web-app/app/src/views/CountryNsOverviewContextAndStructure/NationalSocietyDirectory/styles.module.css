@@ -1,0 +1,9 @@
+.ns-directory {
+    .full-name {
+        font-weight: var(--go-ui-font-weight-medium);
+    }
+
+    .position {
+        color: var(--go-ui-color-text-light);
+    }
+}

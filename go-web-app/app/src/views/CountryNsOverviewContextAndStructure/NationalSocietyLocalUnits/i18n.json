@@ -1,0 +1,13 @@
+{
+    "namespace": "countryNsOverviewContextAndStructure",
+    "strings": {
+        "localUnitsTitle": "NS Local Units",
+        "localUnitsMapView": "Map view",
+        "localUnitsListView": "List view",
+        "addLocalUnitLabel": "Add a Local Unit",
+        "exportButtonLabel": "Export Local Units",
+        "configureDropdownLabel": "Configure Local Units",
+        "importDropdownLabel": "Import Local Units",
+        "viewPreviousImportsDropdownLabel": "View previous imports"
+    }
+}

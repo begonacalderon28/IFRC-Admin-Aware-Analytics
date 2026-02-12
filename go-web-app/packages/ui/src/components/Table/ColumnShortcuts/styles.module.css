@@ -1,0 +1,35 @@
+.title {
+    color: inherit;
+}
+
+.actions-cell {
+    width: max-content;
+}
+
+.expansion-indicator-cell-container {
+    position: relative;
+}
+
+.timeline-cell-container {
+    position: relative;
+}
+
+.date-column {
+    width: 0%;
+    min-width: 7rem;
+}
+
+.expand-column {
+    width: 0%;
+    min-width: 3rem;
+}
+
+.progress-column {
+    width: 0%;
+    min-width: 8rem;
+}
+
+.timeline-column {
+    width: 0%;
+    min-width: 22rem;
+}

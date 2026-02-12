@@ -1,0 +1,12 @@
+{
+    "namespace": "countryNsOverviewContextAndStructure",
+    "strings": {
+        "localUnitsFilterTypePlaceholder": "Type (All)",
+        "localUnitsFilterTypeLabel": "Type",
+        "localUnitsFilterClear": "Clear filters",
+        "localUnitsFilterValidatedPlaceholder": "Validation (All)",
+        "localUnitsFilterValidatedLabel": "Validation",
+        "localUnitsFilterSearchLabel": "Search",
+        "localUnitsFilterSearchPlaceholderLabel": "Search Local Units"
+    }
+}

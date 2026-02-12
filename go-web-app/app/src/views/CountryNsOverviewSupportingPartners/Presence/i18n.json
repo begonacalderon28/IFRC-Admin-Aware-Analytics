@@ -1,0 +1,18 @@
+{
+    "namespace": "countryNsOverviewSupportingPartners",
+    "strings": {
+        "countryIFRCPresenceTitle": "IFRC Presence",
+        "countryIFRCPresenceHeadOfDelegation": "Head of {delegationOfficeType}",
+        "countryIFRCLegalStatus": "IFRC legal status",
+        "countryIFRCDisasterLaw": "IFRC disaster law",
+        "countryICRCPresenceTitle": "ICRC Presence",
+        "countryICRCConfirmedPartner": "Confirmed partner for {year}",
+        "countryICRCKeyOperations": "Key Operations",
+        "countryICRCWithin": "within {name}",
+        "source": "Source",
+        "icrc": "ICRC",
+        "countryIFRCDelegationType": "Office Type",
+        "countryIFRCLocation": "Location",
+        "disclaimer": "This link will only be accessible to IFRC staff."
+    }
+}

@@ -1,0 +1,78 @@
+from django.core.management.base import BaseCommand
+from django.contrib.auth.models import Group, Permission
+from django.contrib.contenttypes.models import ContentType
+from api.models import Country, Region
+
+class Command(BaseCommand):
+    help = "Create analytics permissions and groups"
+
+    def handle(self, *args, **options):
+        country_ct = ContentType.objects.get_for_model(Country)
+        region_ct = ContentType.objects.get_for_model(Region)
+
+        def ensure_permission(codename, name, content_type):
+            perm, _ = Permission.objects.get_or_create(
+                codename=codename,
+                defaults={
+                    "name": name,
+                    "content_type": content_type,
+                },
+            )
+            updated_fields = []
+            if perm.name != name:
+                perm.name = name
+                updated_fields.append("name")
+            if perm.content_type_id != content_type.id:
+                perm.content_type = content_type
+                updated_fields.append("content_type")
+            if updated_fields:
+                perm.save(update_fields=updated_fields)
+            return perm
+
+        # Cleanup existing analytics region groups/perms so names stay in sync
+        Permission.objects.filter(codename__startswith="analytics_view_region_").delete()
+        Group.objects.filter(name__startswith="Regional Information Management Officer").delete()
+
+        # Global Information Management Officer
+        perm = ensure_permission(
+            codename="analytics_view_global",
+            name="Can view global analytics",
+            content_type=country_ct,
+        )
+        global_group, _ = Group.objects.get_or_create(name="Global Information Management Officer")
+        global_group.permissions.add(perm)
+
+        # Information Management Officer Supporting Operations
+        ops_perm = ensure_permission(
+            codename="analytics_view_live",
+            name="Can view analytics live emergency",
+            content_type=country_ct,
+        )
+        ops_group, _ = Group.objects.get_or_create(name="Information Management Officer Supporting Operations")
+        ops_group.permissions.add(ops_perm)
+
+        # Regional Information Management Officer (one permission + group per region)
+        region_id_map = {
+            0: ("africa", "Africa"),
+            1: ("americas", "Americas"),
+            2: ("asia-pacific", "Asia Pacific"),
+            3: ("europe", "Europe"),
+            4: ("middle-east-north-africa", "Middle East & North Africa"),
+        }
+
+        for region in Region.objects.all():
+            region_code, region_label = region_id_map.get(
+                region.id,
+                (f"region-{region.id}", f"Region {region.id}"),
+            )
+            codename = f"analytics_view_region_{region_code}"
+            name = f"Can view analytics for region {region_label}"
+            perm = ensure_permission(
+                codename=codename,
+                name=name,
+                content_type=region_ct,
+            )
+            group, _ = Group.objects.get_or_create(name=f"Regional Information Management Officer {region_label}")
+            group.permissions.add(perm)
+
+        self.stdout.write(self.style.SUCCESS("Analytics permissions/groups created"))

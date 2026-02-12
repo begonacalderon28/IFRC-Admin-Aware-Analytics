@@ -1,0 +1,10 @@
+{
+    "namespace": "emergencyActivities",
+    "strings": {
+        "completedProject": "{completeProjectCount} from {totalProjects} activities are completed.",
+        "showMore": "See more",
+        "showLess": "See less",
+        "peopleReached": "People Reached",
+        "provinceOrRegion": "Province / Region"
+    }
+}

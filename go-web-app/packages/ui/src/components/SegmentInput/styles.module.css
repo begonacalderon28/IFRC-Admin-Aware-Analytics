@@ -1,0 +1,8 @@
+.raw-button {
+    display: contents;
+}
+
+.segment-input {
+    border-radius: var(--go-ui-border-radius-full);
+    width: fit-content;
+}

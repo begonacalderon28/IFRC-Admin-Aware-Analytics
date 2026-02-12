@@ -1,0 +1,14 @@
+.sidebar {
+    height: var(--go-ui-height-map-md);
+}
+
+.activity-table {
+    .actions {
+        width: 3rem;
+    }
+
+    .title {
+        width: 0%;
+        min-width: 16rem;
+    }
+}

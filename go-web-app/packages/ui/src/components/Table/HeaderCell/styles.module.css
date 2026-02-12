@@ -1,0 +1,19 @@
+.header-cell {
+    display: flex;
+    align-items: center;
+    color: var(--go-ui-color-text-black);
+    font-weight: var(--go-ui-font-weight-semibold);
+
+    .sort-button {
+        flex-shrink: 0;
+    }
+
+    .icon {
+        flex-shrink: 0;
+        font-size: var(--go-ui-height-icon-multiplier);
+    }
+
+    .info-popup-icon {
+        flex-shrink: 0;
+    }
+}

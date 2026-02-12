@@ -1,0 +1,12 @@
+.table {
+    display: flex;
+
+    .type {
+        width: 8rem;
+        min-width: 8rem;
+    }
+
+    .actions {
+        min-width: 9rem;
+    }
+}

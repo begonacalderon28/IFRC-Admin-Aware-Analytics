@@ -1,0 +1,24 @@
+{
+    "namespace": "drefApplicationForm",
+    "strings": {
+        "formPageTitle": "IFRC GO - DREF Application",
+        "formSaveButtonLabel": "Save",
+        "formContinueButtonLabel": "Continue",
+        "formSaveRequestSuccessMessage": "DREF Application created/updated successfully",
+        "formSaveRequestFailureMessage": "Failed to create/update DREF Application",
+        "formExportLabel": "Export",
+        "formPageHeading": "DREF Application",
+        "formTabOverviewLabel": "Operation Overview",
+        "formTabEventDetailLabel": "Event Detail",
+        "formTabScenarioAnalysisLabel": "Scenario Analysis",
+        "formTabPlanLabel": "Plan",
+        "formTabActionsLabel": "Actions/Needs",
+        "formTabOperationLabel": "Operation",
+        "formTabSubmissionLabel": "Operational timeframes and contacts",
+        "formLoadErrorTitle": "Failed to load DREF Application!",
+        "formBackButtonLabel": "Back",
+        "formLoadingMessage": "Loading DREF Application...",
+        "formEditNotAvailableInSelectedLanguageMessage": "DREF Application is currently in view-only mode.",
+        "drefFeedbackForm": "Provide feedback on IFRC DREF"
+    }
+}

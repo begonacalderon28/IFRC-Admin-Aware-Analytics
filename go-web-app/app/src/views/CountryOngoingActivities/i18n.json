@@ -1,0 +1,7 @@
+{
+    "namespace": "countryOngoingActivities",
+    "strings": {
+        "ongoingEmergenciesTabTitle": "Ongoing Emergencies",
+        "threeWProjectsTabTitle": "3W Projects"
+    }
+}

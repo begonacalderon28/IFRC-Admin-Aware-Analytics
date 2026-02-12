@@ -1,0 +1,22 @@
+{
+    "namespace": "allSurgeAlerts",
+    "strings": {
+        "allSurgeAlertsTitle": "All Surge Alerts",
+        "allSurgeAlertsHeading": "All Surge Alerts ({numSurgeAlerts})",
+        "eventFilterLabel": "Emergency",
+        "countryFilterLabel": "Country",
+        "positionFilterLabel": "Position",
+        "keywordsFilterLabel": "Keywords",
+        "defaultPlaceholder": "All",
+        "failedToCreateExport": "Failed to generate export.",
+        "surgeAlertDate": "Alert Date",
+        "surgeAlertDuration": "Duration",
+        "surgeAlertPosition": "Position",
+        "surgeAlertStartDate": "Start Date",
+        "surgeAlertKeywords": "Keywords",
+        "surgeAlertEmergency": "Emergency",
+        "surgeAlertCountry": "Country",
+        "surgeAlertStatus": "Status",
+        "surgeAlertImmediately": "Immediately"
+    }
+}

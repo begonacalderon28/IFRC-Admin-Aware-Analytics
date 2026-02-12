@@ -1,0 +1,8 @@
+{
+    "namespace": "oldDrefFinalReportForm",
+    "strings": {
+        "drefFormIndicatorTitleLabel": "Title",
+        "drefFormIndicatorTargetLabel": "Target",
+        "drefOperationalUpdateIndicatorActualLabel": "Actual"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "namespace": "countryNsOverviewContextAndStructure",
+    "strings": {
+        "localUnitActionsEdit": "Edit",
+        "localUnitActionsView": "View",
+        "localUnitActionsDelete": "Delete"
+    }
+}

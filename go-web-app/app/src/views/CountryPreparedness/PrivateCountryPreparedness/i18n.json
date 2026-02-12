@@ -1,0 +1,31 @@
+{
+    "namespace": "countryPreparedness",
+    "strings": {
+        "nsPreparednessAndResponseCapacityHeading": "NS Preparedness and Response Capacity",
+        "goBackButtonTitle": "Back to Capacity",
+        "startDateLabel": "Start Date",
+        "perPhaseLabel": "PER Phase",
+        "perCycleLabel": "PER Cycle",
+        "typeOfAssessmentLabel": "Type of Assessment",
+        "focalPointNameLabel": "Focal Point",
+        "focalPointEmailTitle": "Email",
+        "perAssessmentHeading": "PER Process Results",
+        "totalBenchmarkSummaryHeading": "Total Benchmark Summary: ",
+        "NSResponseHeading": "NS Response Mechanism Performance",
+        "componentsByAreaHeading": "Components by Area",
+        "highlightedTopRatedComponentHeading": "Highlighted Top Rated Components",
+        "priorityComponentToBeStrengthenedHeading": "Priority Components To Be Strengthened",
+        "averageComponentRatingLabel": "Average Component Rating",
+        "componentRatingResultsHeading": "Components Rating Results",
+        "componentNotReviewed": "0 - Not reviewed",
+        "componentChartNotAvailable": "Charts not available!",
+        "componentChartNotAvailableDescription": "Assessment has not been performed yet for current PER cycle!",
+        "lastUpdatedLabel": "Last update",
+        "perExport": "Export",
+        "upload": "Upload",
+        "perAreas": "PER Areas",
+        "relevantDocumentHeader": "Relevant Documents",
+        "uploadLimitDisclaimer": "Note: You can only upload up to 10 documents.",
+        "perArea": "Area {areaNumber}: {title}"
+    }
+}

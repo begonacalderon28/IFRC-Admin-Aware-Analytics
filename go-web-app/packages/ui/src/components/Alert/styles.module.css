@@ -1,0 +1,29 @@
+.alert {
+    border-radius: var(--go-ui-border-radius-md);
+    width: calc(14rem + 16vw);
+    color: var(--go-ui-color-white);
+
+    .icon {
+        font-size: var(--go-ui-font-size-2xl);
+    }
+
+    .close-icon {
+        font-size: var(--go-ui-font-size-2xl);
+    }
+
+    &.info {
+        background-color: var(--go-ui-color-gray-80);
+    }
+
+    &.success {
+        background-color: var(--go-ui-color-positive);
+    }
+
+    &.danger {
+        background-color: var(--go-ui-color-negative);
+    }
+
+    &.warning {
+        background-color: var(--go-ui-color-warning);
+    }
+}

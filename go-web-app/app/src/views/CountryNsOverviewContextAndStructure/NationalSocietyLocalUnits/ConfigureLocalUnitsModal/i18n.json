@@ -1,0 +1,10 @@
+{
+    "namespace": "configureLocalUnitsModal",
+    "strings": {
+        "modalHeading": "Configure Local Units for {countryName}",
+        "manageExternallyHeading": "Manage Local Units externally",
+        "externallyManagedDescription": "Local unit types that are externally managed cannot be directly created or modified within the GO platform. However, bulk upload is supported for these types.",
+        "updateFailureMessage": "Failed to update local unit configuration!",
+        "closeButtonLabel": "Close"
+    }
+}

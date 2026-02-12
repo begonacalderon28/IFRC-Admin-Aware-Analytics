@@ -1,0 +1,307 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'develop'
+
+env:
+  APP_API_ENDPOINT: 'https://goadmin-stage.ifrc.org/'
+  APP_ENVIRONMENT: 'development'
+  APP_MAPBOX_ACCESS_TOKEN: 'dummy-token'
+  APP_RISK_API_ENDPOINT: 'https://go-risk-staging.northeurope.cloudapp.azure.com/api/v1/'
+  APP_TINY_API_KEY: 'dummy-api-key'
+  APP_TITLE: 'IFRC Go Test'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ui:
+    name: Build UI Library
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/ui
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Lint CSS
+        run: pnpm lint:css
+
+      - name: Lint JS
+        run: pnpm lint:js
+
+      - name: Build
+        run: pnpm build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Run test
+        run: pnpm test
+
+  translation:
+    continue-on-error: true
+    name: Identify error with translation files
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Identify error with translation files
+        run: pnpm lint:translation
+
+  translation-migrations:
+    if: |
+      (github.event_name == 'pull_request' && github.base_ref == 'develop') ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/develop')
+    continue-on-error: true
+    name: Identify if translation migrations need to be generated
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Identify if translation migrations need to be generated
+        run: |
+          if pnpm translatte:generate; then
+            # The step should fail if generation is possible
+            exit 1
+          fi
+
+  unused:
+    name: Identify unused files
+    runs-on: ubuntu-latest
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Initialize types
+        run: pnpm initialize:type
+        working-directory: app
+
+      - name: Identify unused files
+        run: pnpm lint:unused
+
+  lint:
+    name: Lint JS
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Lint JS
+        run: pnpm lint:js
+
+  lint-css:
+    name: Lint CSS
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Lint CSS
+        run: pnpm lint:css
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [ui]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Generate types
+        run: pnpm generate:type
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+  typos:
+    name: Spell Check with Typos
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Actions Repository
+      uses: actions/checkout@v4
+
+    - name: Check spelling
+      uses: crate-ci/typos@v1.29.4
+
+  build:
+    name: Build GO Web App
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    needs: [lint, lint-css, test, ui]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ui-build
+          path: packages/ui/dist
+
+      - name: Build
+        run: pnpm build
+
+  validate_helm:
+    name: Validate Helm
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+
+      - name: Install Helm
+        uses: azure/setup-helm@v4
+
+      - name: Helm lint
+        run: helm lint ./nginx-serve/helm --values ./nginx-serve/helm/values-test.yaml
+
+      - name: Helm template
+        run: helm template ./nginx-serve/helm --values ./nginx-serve/helm/values-test.yaml

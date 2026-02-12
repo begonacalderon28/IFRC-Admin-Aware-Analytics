@@ -1,0 +1,67 @@
+.expanded-modal {
+    .img-element {
+        margin: 0;
+        background-color: var(--go-ui-color-background);
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+    }
+}
+
+.image {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+
+    .img-element {
+        width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    &:not(.without-background) {
+        >.img-element {
+            background-color: var(--go-ui-color-background);
+        }
+    }
+
+    &.with-contained-fit {
+        >.img-element {
+            object-fit: contain;
+        }
+    }
+
+    &.auto-size {
+        .img-element {
+            height: auto;
+        }
+    }
+
+    &.small-size {
+        .img-element {
+            height: 8rem;
+        }
+    }
+
+    &.medium-size {
+        .img-element {
+            height: 12rem;
+        }
+    }
+
+    &.large-size {
+        .img-element {
+            height: 20rem;
+        }
+    }
+
+    &.expandable {
+        cursor: pointer;
+    }
+
+    .caption {
+        text-align: center;
+    }
+}

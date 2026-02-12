@@ -1,0 +1,11 @@
+{
+    "namespace": "surgeOverview",
+    "strings": {
+        "eruReadinessCount": "ERU Capacity and Readiness ({count})",
+        "eruReadinessUpdateButton": "Update ERU Readiness",
+        "eruNationalSociety": "National Society",
+        "eruType": "ERU Type",
+        "exportEruReadiness": "Export ERU Readiness",
+        "fetchEruReadinessFailed": "Failed to fetch ERU readiness information."
+    }
+}

@@ -1,0 +1,10 @@
+.all-flash-updates {
+    .flash-updates-table {
+        .table {
+            .created-at {
+                width: 0%;
+                min-width: 9rem;
+            }
+        }
+    }
+}

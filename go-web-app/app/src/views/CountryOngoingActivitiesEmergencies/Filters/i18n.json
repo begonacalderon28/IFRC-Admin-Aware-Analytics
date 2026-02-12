@@ -1,0 +1,12 @@
+{
+    "namespace": "countryOngoingActivitiesEmergencies",
+    "strings": {
+        "appealsStartDateAfter": "Start After",
+        "appealsStartDateBefore": "Start Before",
+        "appealsTypeLabel": "Appeal Type",
+        "appealsDisasterType": "Disaster Type",
+        "appealsFilterTypePlaceholder": "All Appeal Types",
+        "appealsFilterDisastersPlaceholder": "All Disaster Types",
+        "operationMapClearFilters": "Clear Filters"
+    }
+}

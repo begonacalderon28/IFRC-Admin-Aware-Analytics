@@ -1,0 +1,15 @@
+.surge-catalogue {
+    display: grid;
+    grid-gap: var(--go-ui-spacing-xl);
+    grid-template-columns: calc(16rem + 8%) 1fr;
+
+    .tab-list {
+        .icon {
+            font-size: var(--go-ui-font-size-2xl);
+        }
+    }
+
+    @media screen and (max-width: 40rem) {
+        grid-template-columns: 1fr;
+    }
+}
