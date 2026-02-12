@@ -1,0 +1,31 @@
+,fullPageUrl,country,operatingSystemWithVersion,browser,newVsReturning,percentScrolled,eventName,sessionSource,fileExtension,engagementRate
+60242,go.ifrc.org/emergencies/6411,Canada,Windows 11,Chrome,new,,page_view,google,,1.0
+69896,go.ifrc.org/emergencies/7200/additional-info/response-overview,Australia,Windows 11,Edge,returning,,page_view,google,,1.0
+15014,go.ifrc.org/alerts/all?event=7628,Netherlands,Windows 11,Edge,returning,,page_view,(direct),,1.0
+90172,go.ifrc.org/emergencies/7678/reports,United States,Macintosh Intel 15.7,Chrome,new,,page_view,(direct),,1.0
+104711,go.ifrc.org/field-reports/17490/edit,China,Windows 7,Chrome,new,,session_start,(direct),,1.0
+146849,go.ifrc.org/,Bulgaria,Windows 11,Chrome,returning,,page_view,google,,0.625
+448,go-stage.ifrc.org/,Venezuela,Windows 7,Chrome,new,,first_visit,(direct),,1.0
+81441,go.ifrc.org/emergencies/7631/details,Australia,Windows 11,Chrome,returning,,page_view,google,,1.0
+149104,go.ifrc.org/emergencies/7464/additional-info/resources,Malaysia,Windows 11,Edge,(not set),90,scroll,statics.teams.cdn.office.net,,0.5
+59668,go.ifrc.org/emergencies/6346,Syria,Windows 11,Edge,new,90,scroll,google,,1.0
+45008,go.ifrc.org/deployments/catalogue/health,Türkiye,Macintosh Intel 10.15,Safari,new,,first_visit,(direct),,1.0
+123440,go.ifrc.org/resources,Syria,Windows 10,Chrome,new,,page_view,google,,1.0
+48358,go.ifrc.org/emergencies/1374/details/,Kenya,Android 10,Chrome,returning,,page_view,(direct),,1.0
+148607,go.ifrc.org/emergencies/5567/details,Malaysia,Windows 11,Chrome,returning,,session_start,google,,0.5
+151127,go.ifrc.org/surge/catalogue/health/eru-clinic,United States,Macintosh Intel 10.15,Chrome,new,,first_visit,(direct),,0.5
+71413,go.ifrc.org/emergencies/7383/reports,China,Windows 7,Chrome,new,,session_start,(direct),,1.0
+126336,go.ifrc.org/search?keyword=unified%20plans,Canada,Windows 11,Edge,returning,,page_view,(direct),,1.0
+131922,go.ifrc.org/surge/catalogue/information-management/regional-office-support,Kenya,iOS 17.6.1,Safari,new,,page_view,(direct),,1.0
+43253,go.ifrc.org/deployed-personnels/all,United States,Android 16.0.0,Chrome,returning,,page_view,google,,1.0
+26527,go.ifrc.org/countries/174/profile/overview/,Kenya,Macintosh Intel 10.15,Safari,returning,,page_view,(direct),,1.0
+105375,go.ifrc.org/field-reports/17645/edit,Germany,Macintosh Intel 10.15,Chrome,new,90,scroll,(direct),,1.0
+7284,go.ifrc.org/,Ecuador,Windows 11,Chrome,new,,user_engagement,google,,1.0
+107141,go.ifrc.org/field-reports/17822,United States,Macintosh Intel 14.6,Chrome,new,90,scroll,google,,1.0
+64376,go.ifrc.org/emergencies/6749/details/,Kenya,Macintosh Intel 10.15,Safari,returning,90,scroll,(direct),,1.0
+132031,go.ifrc.org/surge/catalogue/information-technology,Ecuador,iOS 18.7,Safari,new,,page_view,(direct),,1.0
+13568,go.ifrc.org/account/my-forms/dref,Cameroon,Windows 11,Edge,returning,,file_download,(direct),pdf,1.0
+50844,go.ifrc.org/emergencies/3469/details,United Kingdom,Macintosh Intel 15.6,Chrome,new,,page_view,chatgpt.com,,1.0
+110501,go.ifrc.org/field-reports/17979,Thailand,Windows 11,Edge,returning,,user_engagement,statics.teams.cdn.office.net,,1.0
+70427,go.ifrc.org/emergencies/7251/details,Germany,Macintosh Intel 10.15,Chrome,new,,page_view,(direct),,1.0
+148282,go.ifrc.org/countries/90/ongoing-activities/emergencies,Germany,Windows 10,Firefox,returning,90,scroll,google,,0.5
