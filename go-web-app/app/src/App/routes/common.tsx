@@ -21,6 +21,7 @@ interface Perms {
     isIfrcAdmin: boolean,
     isSuperUser: boolean,
     isGuestUser: boolean,
+    canViewAnalytics: boolean,
 }
 
 export type ExtendedProps = {

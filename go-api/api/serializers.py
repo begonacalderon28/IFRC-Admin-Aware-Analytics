@@ -10,6 +10,7 @@ from django.utils.translation import get_language as django_get_language
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
+from api.analytics_access import get_analytics_access
 # from api.utils import pdf_exporter
 from api.tasks import generate_url
 from api.utils import CountryValidator, RegionValidator
@@ -1955,20 +1956,15 @@ class UserMeSerializer(UserSerializer):
 
     @staticmethod
     def get_analytics_global(user) -> bool:
-        return user.has_perm("api.analytics_view_global")
+        return get_analytics_access(user)["global_access"]
 
     @staticmethod
     def get_analytics_live(user) -> bool:
-        return user.has_perm("api.analytics_view_live")
+        return get_analytics_access(user)["live_access"]
 
     @staticmethod
     def get_analytics_regions(user) -> list[str]:
-        perms = user.get_all_permissions()
-        return [
-            p.replace("api.analytics_view_region_", "")
-            for p in perms
-            if p.startswith("api.analytics_view_region_")
-        ]
+        return get_analytics_access(user)["region_codes"]
 
 
 class ActionSerializer(ModelSerializer):
