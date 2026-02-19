@@ -5,7 +5,6 @@ MODULE_OVERVIEW = "overview"
 MODULE_VIEWS_BY_DATE = "views_by_date"
 MODULE_TOP_PAGES = "top_pages"
 MODULE_TOP_COUNTRIES = "top_countries"
-MODULE_LIVE_MONITORING = "live_monitoring"
 MODULE_MAP_HEATMAP = "map_heatmap"
 MODULE_ENGAGEMENT_PERFORMANCE = "engagement_performance"
 MODULE_AUDIENCE_INSIGHTS = "audience_insights"
@@ -57,11 +56,6 @@ MODULES = (
         allowed_roles=("regional_im", "global_im", "country_im"),
     ),
     AnalyticsModule(
-        key=MODULE_LIVE_MONITORING,
-        label="Live monitoring",
-        allowed_roles=("ops_im",),
-    ),
-    AnalyticsModule(
         key=MODULE_LIVE_SPIKES,
         label="Live spikes",
         allowed_roles=("regional_im", "ops_im", "global_im", "country_im"),
@@ -74,11 +68,6 @@ MODULES = (
     AnalyticsModule(
         key=MODULE_ENGAGEMENT_COMPARISON,
         label="Engagement comparison",
-        allowed_roles=("regional_im", "global_im", "country_im"),
-    ),
-    AnalyticsModule(
-        key=MODULE_METADATA_LOOKUP,
-        label="Metadata lookup",
         allowed_roles=("regional_im", "ops_im", "global_im", "country_im"),
     ),
     AnalyticsModule(
